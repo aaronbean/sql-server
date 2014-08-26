@@ -10,7 +10,7 @@ module.exports = function () {
         function (req, res, next) {
             var message = req.body;
             console.log(message);
-            if (message.token != config.app.slack.token) {
+            if (message.token != config.apps.slack.token) {
                 return res.send(403);
             }
             var response = {
