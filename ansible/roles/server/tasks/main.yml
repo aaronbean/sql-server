@@ -1,0 +1,32 @@
+---
+- name: Ensure dest directory exists
+  file: path={{ prefix }} owner={{ ansible_user }} group=www state=directory
+  sudo: yes
+
+- name: Install git
+  zypper: name=git
+  sudo: yes
+
+- name: Install packages required by npm modules
+  zypper: name={{ item }}
+  sudo: yes
+  with_items:
+    - gcc
+    - gcc-c++
+
+- name: Check out application source
+  git: repo=git@github.com:aaronbean/sql-server.git dest={{ prefix }} version={{ version }} accept_hostkey=true
+    force=true update=true depth=4
+
+- name: Install npm dependencies
+  npm: path={{ prefix }} production=yes
+
+- name: Add server to autostart
+  shell: /sbin/chkconfig {{ appname }}_{{ node_env }} on
+  sudo: yes
+
+- name: Start server
+  shell: /etc/init.d/{{ appname }}_{{ node_env }} start
+
+- include: nginx.yml
+  tags: config

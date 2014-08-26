@@ -1,0 +1,15 @@
+{
+    "apps": {
+        "slack": {
+            "token": "pIdLQZIx5yzxtsIyLlwZGiEZ"
+        }
+    },
+    "developer": {
+        "name": "Beardon Services, Inc.",
+        "email": "aaron.bean@beardon.com",
+        "url": "http://www.beardon.com"
+    },
+    "session": {
+        "secret": "BprhQiC6DCmjzSRERiF0badu"
+    }
+}

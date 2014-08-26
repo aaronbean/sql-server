@@ -1,0 +1,9 @@
+---
+- hosts: server
+  roles:
+    - naught
+    - server
+#    - slack
+  vars: # vars used by naught
+    dir: "{{ prefix }}"
+  remote_user: "{{ ansible_user }}"

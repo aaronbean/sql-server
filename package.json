@@ -1,0 +1,36 @@
+{
+  "name": "sql-server",
+  "description": "SQL's outgoing webhook responder for Slack",
+  "version": "0.0.1",
+  "homepage": "https://github.com/aaronbean/sql-server",
+  "bugs": {
+    "url": "https://github.com/aaronbean/sql-server/issues",
+    "email": "aaron.bean@beardon.com"
+  },
+  "author": {
+    "name": "Aaron Bean",
+    "email": "aaron.bean@beardon.com",
+    "url": "https://github.com/aaronbean"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "bluebird": "^1.2.4",
+    "body-parser": "^1.0.2",
+    "config": "^0.4.37",
+    "connect-redis": "^2.0.0",
+    "consolidate": "^0.10.0",
+    "cookie-parser": "^1.0.1",
+    "dustjs-linkedin": "^2.4.0",
+    "errorhandler": "^1.0.2",
+    "express": "^4.0.0",
+    "express-session": "^1.0.4",
+    "lodash": "^2.4.1",
+    "method-override": "^1.0.2",
+    "morgan": "^1.0.1",
+    "pkginfo": "^0.3.0",
+    "request": "^2.34.0",
+    "static-favicon": "^1.0.2"
+  }
+}

@@ -1,0 +1,8 @@
+---
+# Do this to gather facts about all the hosts
+- hosts: all
+  tasks: []
+  remote_user: root
+
+- include: prerequisites.yml
+- include: sql-server.yml

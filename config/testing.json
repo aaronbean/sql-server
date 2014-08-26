@@ -1,0 +1,10 @@
+{
+    "node": {
+        "port": 3121
+    },
+    "redis": {
+        "host": "localhost",
+        "port": 6379,
+        "db": 10
+    }
+}
