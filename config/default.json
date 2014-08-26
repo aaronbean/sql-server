@@ -6,5 +6,10 @@
     },
     "session": {
         "secret": "BprhQiC6DCmjzSRERiF0badu"
+    },
+    "websites": {
+        "spark": {
+            "devicesUrl": "https://api.spark.io/v1/devices"
+        }
     }
 }
