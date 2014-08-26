@@ -14,11 +14,14 @@ module.exports = function () {
                 return res.send(403);
             }
             if (!slackLib.isValidRespondee(message.user_name)) {
-                next();
+                return next();
             }
             return slackLib.getRoseResponse(message)
                 .then(function (response) {
                     return res.json(response);
+                })
+                .error(function (err) {
+                    return next(err);
                 })
         }
     ];
