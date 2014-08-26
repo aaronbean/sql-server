@@ -1,6 +1,7 @@
 'use strict';
 
 var config = require('config');
+var slackLib = require('../lib/slack');
 
 module.exports = function () {
 
@@ -9,14 +10,16 @@ module.exports = function () {
     e.postSlack = [
         function (req, res, next) {
             var message = req.body;
-            console.log(message);
             if (message.token != config.apps.slack.token) {
                 return res.send(403);
             }
-            var response = {
-                text: '@' + message.user_name + '(squirrel noises)'
-            };
-            return res.json(response);
+            if (!slackLib.isValidRespondee(message.user_name)) {
+                next();
+            }
+            return slackLib.getRoseResponse(message)
+                .then(function (response) {
+                    return res.json(response);
+                })
         }
     ];
 
