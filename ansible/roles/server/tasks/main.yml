@@ -17,9 +17,8 @@
 - name: Install npm dependencies
   npm: path={{ prefix }} production=yes
 
-- name: Copy encrypted config file
-  copy: src=vault.conf dest={{ prefix }}/config/local.json
-  sudo: yes
+- name: Copy config file with encrypted parameters
+  template: src=local.conf dest={{ prefix }}/config/local.json
 
 - name: Add server to autostart
   shell: /sbin/chkconfig {{ appname }}_{{ node_env }} on
