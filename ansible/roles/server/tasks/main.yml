@@ -3,10 +3,6 @@
   file: path={{ prefix }} owner={{ ansible_user }} group=www state=directory
   sudo: yes
 
-- name: Install git
-  zypper: name=git
-  sudo: yes
-
 - name: Install packages required by npm modules
   zypper: name={{ item }}
   sudo: yes
@@ -20,6 +16,10 @@
 
 - name: Install npm dependencies
   npm: path={{ prefix }} production=yes
+
+- name: Copy encrypted config file
+  copy: src=vault.conf dest={{ prefix }}/config/local.json
+  sudo: yes
 
 - name: Add server to autostart
   shell: /sbin/chkconfig {{ appname }}_{{ node_env }} on
