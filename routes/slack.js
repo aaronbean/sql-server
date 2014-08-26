@@ -8,15 +8,15 @@ module.exports = function () {
 
     e.postSlack = [
         function (req, res, next) {
-            var message = JSON.parse(req.body);
+            var message = req.body;
             console.log(message);
-            if (message.token == config.app.slack.token) {
-                var response = {
-                    text: '@' + message.user_name + '(squirrel noises)'
-                };
-                return res.json(response);
+            if (message.token != config.app.slack.token) {
+                return res.send(403);
             }
-            return res.send(200);
+            var response = {
+                text: '@' + message.user_name + '(squirrel noises)'
+            };
+            return res.json(response);
         }
     ];
 
