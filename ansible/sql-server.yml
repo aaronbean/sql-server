@@ -3,7 +3,7 @@
   roles:
     - naught
     - server
-#    - slack
+    - slack
   vars: # vars used by naught
     dir: "{{ prefix }}"
   remote_user: "{{ ansible_user }}"
