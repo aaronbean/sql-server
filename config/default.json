@@ -8,8 +8,14 @@
         "secret": "BprhQiC6DCmjzSRERiF0badu"
     },
     "websites": {
+        "icndb": {
+            "url": "http://api.icndb.com"
+        },
         "spark": {
-            "devicesUrl": "https://api.spark.io/v1/devices"
+            "url": "https://api.spark.io/v1/devices"
+        },
+        "wit": {
+            "url": "https://api.wit.ai"
         }
     }
 }

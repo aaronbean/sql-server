@@ -6,6 +6,10 @@
         },
         "slack": {
             "token": "{{ slack_token }}"
+        },
+        "wit": {
+            "id": "{{ wit_id }}",
+            "token": "{{ wit_token }}"
         }
     }
 }

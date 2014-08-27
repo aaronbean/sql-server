@@ -18,7 +18,7 @@
   npm: path={{ prefix }} production=yes
 
 - name: Copy config file with encrypted parameters
-  template: src=local.conf dest={{ prefix }}/config/local.json
+  template: src=local.json dest={{ prefix }}/config/local.json
 
 - name: Add server to autostart
   shell: /sbin/chkconfig {{ appname }}_{{ node_env }} on

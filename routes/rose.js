@@ -8,7 +8,7 @@ module.exports = function () {
 
     e.getRose = [
         function (req, res, next) {
-            return roseLib.isBathroomOccupied()
+            return roseLib.isRestroomOccupied()
                 .then(function (isOccupied) {
                     return res.json({occupied: isOccupied});
                 })

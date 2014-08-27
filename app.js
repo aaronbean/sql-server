@@ -30,6 +30,8 @@ app.use(methodOverride());
 app.use(cookieParser());
 app.use(session({store: new RedisStore(config.redis), secret: config.session.secret}));
 
+app.mute = false;
+
 require('./routes')(app); // setup routes
 
 if (process.env.NODE_ENV === 'development') {
