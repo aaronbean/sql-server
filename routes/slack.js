@@ -1,10 +1,7 @@
 'use strict';
 
 var config = require('config');
-var jokeLib = require('../lib/joke');
-var roseLib = require('../lib/rose');
 var slackLib = require('../lib/slack');
-var witLib = require('../lib/wit');
 
 module.exports = function () {
 
