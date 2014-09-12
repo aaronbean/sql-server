@@ -1,0 +1,9 @@
+---
+dependencies:
+  - { role: application-user }
+  - { role: sles-sdk }
+  - { role: vmware-tools }
+  - { role: git }
+  - { role: nodejs }
+  - { role: redis }
+  - { role: naught }

@@ -1,0 +1,21 @@
+---
+- name: ensure destination directory exists
+  file: path={{ prefix }} owner={{ ansible_user }} group=www state=directory
+  sudo: yes
+
+- name: check out sql-server source
+  git: repo=git@github.com:aaronbean/sql-server.git dest={{ prefix }} version={{ sql_server_version }} accept_hostkey=true
+  notify:
+    - restart sql-server
+
+- name: install npm dependencies
+  npm: path={{ prefix }} production=yes
+  notify:
+    - restart sql-server
+
+- name: copy local configuration file
+  template: src=local.json dest={{ prefix }}/config/local.json
+
+- name: start sql-server now and on boot
+  service: name={{ appname }}_{{ node_env }} enabled=yes state=started
+  sudo: yes

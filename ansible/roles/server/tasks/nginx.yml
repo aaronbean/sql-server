@@ -1,8 +1,0 @@
----
-- name: Copy over nginx config file
-  template: src=nginx.conf dest=/etc/nginx/vhosts.d/{{ appname }}.conf
-  sudo: yes
-
-- name: Restart nginx
-  shell: /usr/sbin/rcnginx restart
-  sudo: yes
