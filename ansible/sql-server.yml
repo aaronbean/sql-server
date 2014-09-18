@@ -2,7 +2,7 @@
 - hosts: server
   roles:
     - sql-server
-    - nginx-config
+    - nginx-basic
     - slack
   vars: # vars used by naught
     dir: "{{ prefix }}"
