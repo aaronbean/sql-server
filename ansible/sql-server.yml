@@ -13,6 +13,4 @@
     - sql-server
     - nginx-config-basic
     - slack
-  vars: # vars used by naught
-    dir: "{{ prefix }}"
   remote_user: "{{ ansible_user }}"
