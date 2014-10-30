@@ -11,6 +11,6 @@
 - hosts: server
   roles:
     - sql-server
-    - nginx-config-basic
+    - nginx-config
     - slack
   remote_user: "{{ ansible_user }}"
