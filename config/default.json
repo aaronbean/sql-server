@@ -14,6 +14,9 @@
         "spark": {
             "url": "https://api.spark.io/v1/devices"
         },
+        "turret": {
+            "url": "http://build.hq.beardon.com:3302"
+        },
         "wit": {
             "url": "https://api.wit.ai"
         }
