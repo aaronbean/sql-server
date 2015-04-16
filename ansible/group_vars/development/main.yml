@@ -1,5 +1,5 @@
 ---
-ansible_user: "sql-server"
+ansible_user: sql-server
 appname: sql-server
 domain: sql.beardon.com
 nginx_ip: 172.20.1.146
