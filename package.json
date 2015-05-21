@@ -25,6 +25,7 @@
     "dustjs-linkedin": "^2.4.0",
     "errorhandler": "^1.0.2",
     "express": "^4.0.0",
+    "express-ifttt-webhook": "^0.2.3",
     "express-session": "^1.0.4",
     "lodash": "^2.4.1",
     "method-override": "^1.0.2",

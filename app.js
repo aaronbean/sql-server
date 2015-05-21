@@ -15,6 +15,7 @@ var morgan = require('morgan');
 var path = require('path');
 var session = require('express-session');
 var RedisStore = require('connect-redis')(session);
+var webhook = require('express-ifttt-webhook');
 
 var app = global.app = express();
 
@@ -25,6 +26,7 @@ app.set('views', path.join(__dirname, '/views'));
 app.use(favicon(path.join(__dirname, 'public/favicon.ico')));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(morgan('dev'));
+app.use(webhook());
 app.use(bodyParser());
 app.use(methodOverride());
 app.use(cookieParser());
