@@ -27,10 +27,16 @@ app.use(favicon(path.join(__dirname, 'public/favicon.ico')));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(morgan('dev'));
 app.use(webhook(require('./lib/ifttt')));
-app.use(bodyParser());
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(methodOverride());
 app.use(cookieParser());
-app.use(session({store: new RedisStore(config.redis), secret: config.session.secret}));
+app.use(session({
+    resave: false,
+    saveUninitialized: true,
+    secret: config.session.secret,
+    store: new RedisStore(config.redis)
+}));
 
 app.mute = false;
 
